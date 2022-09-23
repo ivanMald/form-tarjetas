@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form name="formularioTarjetas">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre">
+        <br>
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email">
+        <br>
+        <label for="mensaje">Mensaje</label>
+        <textarea name="mensaje" id="mensaje" cols="30" rows="10"></textarea>
+        <br>
+        <input id="enviarCorreo" type="submit" value="Enviar">
+    </form>
+
+
+    <script>
+
+    const btnEnvio = document.getElementById('enviarCorreo');
+    btnEnvio.addEventListener('click', function(e){
+        e.preventDefault();
+        const email = document.getElementById('email').value;
+        const nombre = document.getElementById('nombre').value;
+        const mensaje = document.getElementById('mensaje').value;
+
+        window.location.href=`mailto:ivanvalentinmaldonado2014@hotmail.com?subjet=EnvioDesdeFormulario&body=Nombre%3A%20${nombre}%0ACorreo%3A%20${email}%0AMensaje%3A%20${mensaje}`;
+        
+    })
+    </script>
+</body>
+</html>
